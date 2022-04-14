@@ -23,12 +23,10 @@ category.forEach((v, i) => {
 
   v.addEventListener("mouseover", (e) => {
     gnb_nav[i].style.maxHeight = "1000px";
-    gnb_nav[i].style.zIndex = "99999";
   });
 
   v.addEventListener("mouseout", (e) => {
     gnb_nav[i].style.maxHeight = "0";
-    gnb_nav[i].style.zIndex = "999";
   });
 });
 
