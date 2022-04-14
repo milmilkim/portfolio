@@ -1,0 +1,603 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "nbg", "맑은 고딕", HelveticaNeue, DroidSans, Sans-serif,
+    Helvetica;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+b {
+  font-weight: bold;
+}
+/* 컨텐츠 */
+
+a:hover {
+  text-decoration: underline;
+}
+
+.main_visual {
+  background: url("../img/2022_Summer1_main_bg.jpg");
+  width: 100%;
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  height: 646px;
+
+  .main_visual_inner {
+    width: 1100px;
+    height: 646px;
+    position: relative;
+    overflow: hidden;
+
+    .main_slogan {
+      position: absolute;
+      top: 7.1%;
+      left: 44px;
+      opacity: 0;
+      animation: fadeIn 200ms ease;
+      animation-fill-mode: forwards;
+    }
+
+    .slogan_btn {
+      z-index: 10;
+      top: 39%;
+      left: 6px;
+      text-align: center;
+      position: absolute;
+      width: 355px;
+      height: 38px;
+
+      a {
+        width: 129px;
+        margin: 0 auto;
+        display: block;
+        color: #d83a78;
+        border: solid 2px #d83a78;
+        border-radius: 5px;
+        padding: 8px 16px;
+        transition: background-color 500ms ease;
+
+        &:hover {
+          background-color: #d83a78;
+          color: #fff;
+        }
+      }
+    }
+
+    .beverage {
+      position: absolute;
+      opacity: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    @for $i from 1 through 3 {
+      .item-#{$i} {
+        z-index: $i;
+        animation: fadeIn 500ms ease ($i * 400ms);
+        animation-fill-mode: forwards;
+      }
+    }
+
+    .item-1 {
+      top: 11.8%;
+      left: 35.7%;
+      width: 48.7%;
+      max-width: 548px;
+    }
+
+    .item-2 {
+      top: 33.5%;
+      left: 19.6%;
+      width: 41.5%;
+      max-width: 468px;
+    }
+
+    .item-3 {
+      z-index: 10;
+      top: 15.6%;
+      right: -8%;
+      width: 26.9%;
+      max-width: 302px;
+    }
+  }
+}
+
+/* 공지 */
+
+.line_notice {
+  width: 100%;
+  height: 62px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .left,
+  .right {
+    height: 62px;
+    position: absolute;
+  }
+
+  .left {
+    background-color: #000;
+    left: 0;
+    width: 55%;
+
+    a {
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url("../img/btn_notice_plus.png") 0 0 no-repeat;
+      background-size: 100%;
+      z-index: 9;
+    }
+  }
+
+  .right {
+    background-color: #f6f5ef;
+    width: 45%;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1280px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    align-items: center;
+
+    dt {
+      display: inline-block;
+    }
+
+    .notice {
+      height: 1;
+      height: 16px;
+      display: inline-block;
+      width: 400px;
+      position: relative;
+      overflow: hidden;
+      margin-left: 30px;
+      top: 5px;
+
+      .line {
+        position: absolute;
+        top: 0;
+        transition: top 300ms ease;
+        font-size: 14px;
+
+        li {
+          height: 16px;
+
+          a {
+            display: block;
+          }
+        }
+      }
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+
+  /* 공지 -- 프로모션 */
+
+  .promotion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    .promotion_title {
+      width: 129px;
+      height: 17px;
+      background: url("../img/prom_ttl_b.png") no-repeat;
+      background-size: 100% auto;
+      display: block;
+      margin-right: 100px;
+    }
+    .promotion_button {
+      width: 35px;
+      height: 35px;
+      background: url("../img/btn_prom_down.png") 0 0 no-repeat;
+      background-size: 100%;
+    }
+
+    .promotion_button.open {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+/* 슬라이드 swiper */
+.swiper {
+  width: 100%;
+  height: 0;
+  transition: height 300ms ease;
+  background-color: #f6f5ef;
+}
+
+.swiper.open {
+  height: 650px;
+}
+
+.swiper-slide {
+  margin-top: 50px;
+  width: 820px;
+  height: 553px;
+  opacity: 0.5;
+
+  .detail {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+
+    a {
+      width: 125px;
+      height: 38px;
+      line-height: 1.5;
+      line-height: 34px;
+      text-align: center;
+      background: none;
+      border-radius: 3px;
+      border: solid 2px #000;
+      transition: all 300ms ease;
+
+      &:hover {
+        background-color: #222;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.swiper-slide-active {
+  opacity: 1;
+}
+
+.swiper-button-prev {
+  left: 20%;
+  background: url("../img/arrow_left_on.png") no-repeat center center;
+}
+
+.swiper-button-next {
+  right: 20%;
+  background: url("../img/arrow_right_on.png") no-repeat center center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 51px;
+  height: 51px;
+  border: solid 2px #000;
+  border-radius: 26px;
+  transition: all 300ms ease;
+
+  &:after {
+    content: none;
+  }
+  &:hover {
+    background-color: #fff;
+  }
+}
+
+/* 리워드 reward */
+
+.reward {
+  width: 100%;
+  background-color: #1e3932;
+  height: 240px;
+  color: #fff;
+  letter-spacing: 0.5px;
+
+  .inner {
+    padding: 30px 0 40px 0;
+    .logo {
+      float: left;
+      margin: 0 40px;
+
+      img {
+        width: 176px;
+      }
+    }
+    width: 1080px;
+    margin: auto;
+
+    .info {
+      float: right;
+
+      & > :first-child {
+        border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+      }
+      .info_text {
+        display: block;
+        margin-bottom: 12px;
+        width: 800px;
+        position: relative;
+
+        h2 {
+          font-size: 26px;
+          line-height: 1.4;
+          margin-bottom: 12px;
+        }
+
+        p {
+          line-height: 1.4;
+          font-size: 17px;
+          margin-bottom: 10px;
+          font-weight: 300;
+
+          &.small {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .button_group {
+        position: absolute;
+        right: 0;
+        bottom: 20px;
+
+        & > :first-child {
+          margin-right: 10px;
+        }
+
+        &.egift {
+          top: 10px;
+        }
+
+        a {
+          height: 38px;
+          border-radius: 5px;
+          padding: 0 18px;
+          font-size: 14px;
+          color: #fff;
+          box-sizing: border-box;
+          line-height: 36px;
+          display: inline-block;
+        }
+
+        .join {
+          background-color: #00704a;
+          border: 2px solid #00704a;
+        }
+
+        .login,
+        .btn_egift {
+          border: solid 2px #fff;
+        }
+      }
+    }
+  }
+}
+
+/* 컨테이너 container */
+
+@mixin detail($backgroundColor: #1e245c, $color: #fff) {
+  width: 125px;
+  height: 38px;
+  z-index: 6;
+  margin-top: 20px;
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    line-height: 34px;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 500ms ease;
+    color: $backgroundColor;
+    border: 2px solid $backgroundColor;
+
+    &:hover {
+      background-color: $backgroundColor;
+      color: $color;
+    }
+  }
+} //버튼 공통
+
+.container {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  position: relative;
+
+  img {
+    vertical-align: top;
+    max-width: 100%;
+  }
+
+  .text {
+    z-index: 9;
+    top: 31.9%;
+    right: 15.8%;
+    max-width: 321px;
+    width: 28.7%;
+    position: absolute;
+
+    .detail {
+      @include detail(#1e245c);
+      width: 125px;
+      height: 38px;
+      z-index: 6;
+      margin-top: 20px;
+    }
+  }
+
+  &.item-1 {
+    background: url("../img/2022_Summer1_bean_bg2.jpg");
+
+    &::before,
+    &::after {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      background-position: center top;
+      background-repeat: no-repeat;
+      content: "";
+    }
+
+    &::before {
+      top: -17.5%;
+      left: 0;
+      width: 425px;
+      height: 392px;
+      background-image: url("../img/2022_Summer1_bean_bg_left.png");
+    }
+
+    &::after {
+      bottom: -15.5%;
+      right: 0;
+      width: 482px;
+      height: 360px;
+      background-image: url("../img/2022_Summer1_bean_bg_right.png");
+    }
+
+    .img_area {
+      position: absolute;
+      z-index: 9;
+      top: 13.6%;
+      left: 14.9%;
+      max-width: 310px;
+      width: 27.7%;
+    }
+  }
+
+  &.item-2 {
+    background: url("../img/reserve_2022_indonesia_visual_bg.jpg");
+
+    &::before {
+      content: url("../img/reserve_2022_indonesia_leaf1.png");
+      position: absolute;
+      left: 0;
+      bottom: -1%;
+    }
+
+    &::after {
+      content: url("../img/reserve_2022_indonesia_leaf2.png");
+      position: absolute;
+      right: 0;
+      bottom: -1%;
+    }
+
+    .img_area {
+      bottom: 0;
+      position: absolute;
+    }
+    .detail {
+      @include detail(#b9813e);
+
+      a {
+        margin-left: 254px;
+      }
+    }
+
+    .title {
+      margin-top: 100px;
+    }
+  }
+
+  &.item-3 {
+    background: url("../img/fav_prod_bg_new.jpg") center center fixed no-repeat
+      #45434c;
+    background-size: auto 100%;
+    height: 800px;
+    padding: 0;
+    position: relative;
+
+    .img_area {
+      top: 100px;
+      right: -10px;
+      width: 672px;
+      height: 458px;
+      background-image: url("../img/2022_Summer1_pick_img.png");
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 7;
+    }
+
+    .text_area {
+      width: 400px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      .text-1 {
+        background: url("../img/fav_prod_txt01.png") no-repeat;
+        background-position: right;
+        height: 204px;
+        margin-bottom: 50px;
+      }
+
+      .text-2 {
+        background: url("../img/fav_prod_txt02.png") no-repeat;
+        background-position: right;
+        height: 156px;
+      }
+
+      .detail {
+        @include detail(#fff, #000);
+        float: right;
+      }
+    }
+  }
+
+  &.item-4 {
+    background: url("../img/reserve_bg_pc.png") no-repeat 50% 100%;
+    background-size: auto 353px;
+
+    .title {
+      position: absolute;
+      bottom: 50%;
+    }
+
+    .detail {
+      @include detail(#000);
+      position: absolute;
+      top: 50%;
+      left: 20%;
+    }
+
+    .img_area {
+      position: absolute;
+      right: 0;
+      margin-left: -500px;
+    }
+  }
+
+  &.item-5 {
+    background: url("../img/store_bg.jpg");
+    background-size: 100% auto;
+  }
+
+  .inner {
+    width: 1124px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+  }
+}
