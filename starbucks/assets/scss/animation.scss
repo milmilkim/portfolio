@@ -28,7 +28,6 @@
 }
 
 @mixin animation($name, $duration) {
-  opacity: 0;
   animation: $name $duration ease;
   animation-fill-mode: forwards;
 }
@@ -43,4 +42,4 @@
   .fade-in-#{$i * 100} {
     @include animation(fadeIn, $i * 100ms);
   }
-}
+} // 100ms, 200ms, ...., 2000ms
