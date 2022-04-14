@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+a,
+a:visited {
+  color: #000;
+}
+
+body {
+  font-family: "Karma", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+}
+
+p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+h1,
+h3,
+h4 {
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+b {
+  font-weight: bolder;
+}
+
+i {
+  font-style: italic;
+}
+
+/* nav */
+#nav {
+  font-size: 23px;
+  width: 100%;
+  position: sticky;
+  z-index: 1;
+  height: 70px;
+  top: 0;
+}
+
+.nav__container {
+  margin: auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0 16px 0;
+  background-color: #fff;
+}
+
+.nav__container :first-child {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav__container :first-child:hover {
+  background-color: #ccc;
+}
+
+/* container */
+
+#container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* row */
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+/* col */
+
+.col {
+  width: 23%;
+}
+
+.col img {
+  width: 100%;
+}
+
+.width-33 {
+  width: 33%;
+  padding: 10px;
+}
+
+.paging {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.paging a {
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.paging a:hover,
+.paging .box {
+  background-color: #000;
+  color: #fff;
+}
+
+/*article*/
+.article {
+  text-align: center;
+  padding: 32px 16px;
+}
+
+/* footer */
+
+#footer {
+  padding: 32px 8px;
+}
+#footer img {
+  width: 50px;
+  margin-right: 10px;
+  float: left;
+}
+
+#footer ul li span {
+  display: block;
+}
+
+#footer ul :first-child {
+  border-bottom: solid 1px #ddd;
+}
+
+#footer ul li {
+  clear: both;
+  padding: 16px;
+}
+
+#footer ul li:hover {
+  background-color: #ccc;
+}
+
+.tag {
+  font-family: serif;
+  padding: 0 8px;
+  color: #fff;
+  background-color: #616161;
+  margin-bottom: 16px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.tag-black {
+  font-size: 15px;
+  background-color: #000;
+}

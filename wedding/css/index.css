@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  height: 100%;
+  line-height: 1.5;
+  background-color: #000;
+}
+
+/* 텍스트 */
+h1,
+h2 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.text-jumbo {
+  font-size: 64px;
+}
+
+.text-large {
+  font-size: 18px;
+}
+
+.text-gray {
+  color: #757575;
+}
+
+.align-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+b {
+  font-weight: bolder;
+}
+
+i {
+  font-style: italic;
+}
+
+p {
+  line-height: 2;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+/* 공통 */
+.grayscale {
+  filter: grayscale(50%);
+}
+
+.radius4px {
+  border-radius: 4px;
+}
+
+.radius8px {
+  border-radius: 8px;
+}
+
+/* nav */
+#nav {
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  opacity: 0.75;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 8px 16px;
+  z-index: 1;
+}
+
+#nav:hover {
+  opacity: 1;
+}
+
+#nav a {
+  color: #000;
+  text-decoration: none;
+}
+
+#nav .category {
+  padding: 8px 16px;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+#nav .category:hover {
+  background-color: #ccc;
+}
+
+#nav .last:hover {
+  background-color: #000;
+}
+
+#nav .last:hover a {
+  color: #fff;
+}
+
+/* display container */
+
+.display-continaer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+}
+
+.bgimg1 {
+  background-image: url(../img/wedding_couple.jpg);
+}
+
+.bgimg2 {
+  background-image: url(../img/flowers.jpg);
+}
+
+.bgimg1,
+.bgimg2 {
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+/* container */
+
+.container {
+  background-color: #ffdddd;
+}
+
+.content {
+  max-width: 980px;
+  padding: 64px 16px;
+  display: block;
+  margin: auto;
+}
+
+.content img {
+  width: 100%;
+  margin: 64px 0;
+}
+
+.button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #000;
+  color: #fff;
+  margin: 15px;
+}
+
+a.button {
+  text-decoration: none;
+}
+.button:hover {
+  background-color: #ccc;
+}
+
+.button-red {
+  background-color: #f44336;
+  opacity: 0.6;
+  padding: 8px 60px;
+  font-size: 24px;
+}
+
+.button-red:hover {
+  color: #000;
+  opacity: 1;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.half {
+  width: 50%;
+  text-align: center;
+}
+
+/* footer */
+
+#footer {
+  height: 90px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+#footer a,
+#footer a:visited {
+  color: #fff;
+}
+
+#footer a:hover {
+  color: #4caf50;
+}

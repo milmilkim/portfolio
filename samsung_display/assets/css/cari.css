@@ -1,0 +1,67 @@
+/* line 1, ../sass/cari.scss */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 5, ../sass/cari.scss */
+.carousel-wrapper {
+  position: relative;
+}
+/* line 8, ../sass/cari.scss */
+.carousel-wrapper .carousel-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+/* line 38, ../sass/cari.scss */
+.carousel-wrapper .carousel-item.light {
+  color: white;
+}
+/* line 41, ../sass/cari.scss */
+
+/* line 54, ../sass/cari.scss */
+.carousel-wrapper [id^="target-item"] {
+  display: none;
+}
+/* line 58, ../sass/cari.scss */
+.carousel-wrapper .item-1 {
+  z-index: 2;
+  opacity: 1;
+  background: url("../img/kv-01.jpg") no-repeat, #333238;
+  background-size: contain;
+  background-position: right top;
+}
+/* line 63, ../sass/cari.scss */
+.carousel-wrapper .item-2 {
+  background: url("../img/main_OLED.jpg") no-repeat, #155236;
+  background-size: contain;
+  background-position: right top;
+}
+/* line 66, ../sass/cari.scss */
+.carousel-wrapper .item-3 {
+  background: url("../img/kv-02.jpg") no-repeat, #e5edf3;
+  background-size: contain;
+  background-position: right top;
+}
+/* line 71, ../sass/cari.scss */
+.carousel-wrapper *:target ~ .item-1 {
+  opacity: 0;
+}
+/* line 75, ../sass/cari.scss */
+.carousel-wrapper #target-item-1:target ~ .item-1 {
+  opacity: 1;
+}
+/* line 79, ../sass/cari.scss */
+.carousel-wrapper #target-item-2:target ~ .item-2,
+.carousel-wrapper #target-item-3:target ~ .item-3 {
+  z-index: 3;
+  opacity: 1;
+}
