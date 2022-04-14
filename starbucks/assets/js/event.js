@@ -30,6 +30,8 @@ category.forEach((v, i) => {
   });
 });
 
+/** 공지 */
+
 const length = document.querySelectorAll(".notice li").length;
 const line = document.querySelector(".line");
 
