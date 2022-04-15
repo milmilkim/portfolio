@@ -1,0 +1,12 @@
+@keyframes bounce {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+  }
+}
+
+.down {
+    animation: bounce 300ms ease 0 0;
+}

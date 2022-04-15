@@ -31,11 +31,11 @@ function ajax(url, method = "GET") {
   });
 }
 
-const ghPageUrl = "https://milmilkim.github.io/portfolio/hyundai";
 
 (async () => {
   try {
-    const res = await ajax(`${ghPageUrl}/assets/json/content.json`);
+    const res = await ajax('./assets/json/content.json');
+    console.log(res);
     const articles = res.content;
     const articleArea = document.querySelector(".articleArea");
 
@@ -101,7 +101,7 @@ const ghPageUrl = "https://milmilkim.github.io/portfolio/hyundai";
 
 (async () => {
   try {
-    const res = await ajax(`${ghPageUrl}/assets/json/social.json`);
+    const res = await ajax('./assets/json/social.json');
     const social = res.social;
 
     const section = document.querySelector(".section.sns");
