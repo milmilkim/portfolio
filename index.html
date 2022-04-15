@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/progress.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
     />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/animation.min.css" />
+    <link rel="stylesheet" href="./assets/css/index.min.css" />
+    <link rel="stylesheet" href="./assets/css/progress.min.css" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>웹 개발자 김소리 포트폴리오</title>
   </head>
   <body>
@@ -22,25 +23,65 @@
       <h1 class="title"></h1>
       <div class="down">↓</div>
     </div>
-    <div class="space">
+    <div class="space"></div>
 
-    </div>
     <div class="skills">
       <div class="inner">
-        <h2>SKILLS</h2>
-        <ul>
-          <li>
-            <div class="inner">
-              js
-            </div>
-          </li>
-          <li>css</li>
-          <li>scss</li>
-          <li>node</li>
-          <li>react</li>
-        </ul>
+        <h2 class="skills_title">SKILLS</h2>
+        <div data-aos="zoom-in">
+          <ul class="icon_wraper">
+            <li class="icon">
+              <div class="icon_inner">
+                <span>html</span>
+                <div class="img_wraper">
+                  <img src="./assets/img/logo/html.png" alt="html" />
+                </div>
+              </div>
+            </li>
+
+            <li class="icon">
+              <div class="icon_inner">
+                <span>javascript</span>
+                <div class="img_wraper">
+                  <img src="./assets/img/logo/js.png" alt="javascript" />
+                </div>
+              </div>
+            </li>
+            <li class="icon">
+              <div class="icon_inner">
+                <span>css</span>
+                <div class="img_wraper">
+                  <img src="./assets/img/logo/css.png" alt="css" />
+                </div>
+              </div>
+            </li>
+            <li class="icon">
+              <div class="icon_inner">
+                <span>sass</span>
+                <div class="img_wraper">
+                  <img src="./assets/img/logo/sass.png" alt="sass" />
+                </div>
+              </div>
+            </li>
+            <li class="icon">
+              <div class="icon_inner">
+                <span>node</span>
+                <div class="img_wraper">
+                  <img src="./assets/img/logo/node.png" alt="node" />
+                </div>
+              </div>
+            </li>
+            <li class="icon">
+              <div class="icon_inner">
+                <span>react</span>
+                <div class="img_wraper">
+                  <img src="./assets/img/logo/react.png" alt="react" />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-   
     </div>
     <div class="portfolio">
       <!-- Slider main container -->
@@ -63,10 +104,8 @@
         <!-- If we need scrollbar -->
         <div class="swiper-scrollbar"></div>
       </div>
-
     </div>
 
-  
     <hr />
     <ul class="trigger">
       <li><a href="./hambuger">Hambuger🍔</a></li>
@@ -89,7 +128,11 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="./assets/js/progress.js"></script>
+    <script src="./assets/js/animation.js"></script>
 
+    <script>
+      AOS.init();
+    </script>
     <script>
       var typewriter = new Typewriter(".title", {
         loop: false,
@@ -104,25 +147,6 @@
         .start();
     </script>
     <script>
-      (function () {
-        var controller = new ScrollMagic.Controller();
-
-        var tween1 = TweenMax.to([".title", ".down"], 0.5, {
-          opacity: 0,
-        });
-
-        var scene = new ScrollMagic.Scene({
-          triggerElement: ".space",
-          duration: "100%",
-          triggerHook: 0.5,
-        })
-          .setTween(tween1)
-          .addTo(controller)
-          .addIndicators({
-            name: "1",
-          });
-      })();
-
       const swiper = new Swiper(".swiper", {
         autoplay: {
           delay: 5000,

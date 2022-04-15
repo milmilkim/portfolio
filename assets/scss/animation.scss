@@ -1,12 +1,13 @@
-@keyframes bounce {
+@keyframes bounce1 {
   from {
-    opacity: 0;
-    transform: translateY(-50px);
+    transform: translateY(-20px);
   }
   to {
+    transform: translateY(0px);
   }
 }
 
 .down {
-    animation: bounce 300ms ease 0 0;
+  animation: bounce1 500ms ease-in;
+  animation-iteration-count: infinite;
 }

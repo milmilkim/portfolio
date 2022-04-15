@@ -1,0 +1,2 @@
+@keyframes bounce1{from{transform:translateY(-20px)}to{transform:translateY(0px)}}.down{animation:bounce1 500ms ease-in;animation-iteration-count:infinite}
+/*# sourceMappingURL=animation.min.css.map */
