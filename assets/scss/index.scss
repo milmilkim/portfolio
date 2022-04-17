@@ -72,7 +72,6 @@ p {
   .down {
     position: absolute;
     bottom: 100px;
-    left: 50%;
     position: fixed;
     font-family: "NeoDunggeunmo";
     background: url(../img/arrow_4.svg) no-repeat center;
@@ -96,13 +95,6 @@ p {
 .about_me {
   height: 100vh;
   position: relative;
-
-  .circle {
-    width: 194px;
-    height: 196px;
-    background: url(../img/github.png) no-repeat;
-    position: relative;
-  }
 
   .github {
     position: absolute;
@@ -181,6 +173,7 @@ p {
         justify-content: space-around;
         color: #000;
         margin-bottom: 10px;
+        flex-wrap: wrap;
         li {
           width: 25%;
 
@@ -211,15 +204,18 @@ p {
   display: flex;
   list-style: none;
   margin-top: 30px;
+  flex-wrap: wrap;
+  max-width: 1120px;
+  margin: 0;
+  justify-content: space-around;
 
   li.icon {
-    width: 16.6%;
+    width: 15%;
     position: relative;
-    margin: 10px;
     -moz-box-shadow: 0 0 15px -3px rgba(0, 0, 0, 0.3); /*FF 3.5+*/
     -webkit-box-shadow: 0 0 15px -3px rgba(0, 0, 0, 0.3); /*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
     box-shadow: 0 0 15px -3px rgba(0, 0, 0, 0.3); /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
-
+    box-sizing: content-box;
     &::after {
       content: "";
       display: block;
@@ -269,6 +265,7 @@ p {
   h2 {
     font-size: 32px;
     color: #000;
+    margin-bottom: 50px;
   }
 
   .navigation {
@@ -276,7 +273,6 @@ p {
     justify-content: center;
     font-family: "KoPub Batang";
     ul {
-      width: 200px;
       font-size: 24px;
       color: #000;
       position: relative;
@@ -289,7 +285,7 @@ p {
             width: 30px;
             height: 30px;
             position: absolute;
-            left: -20%;
+            left: -40%;
           }
         }
         a {
@@ -358,4 +354,45 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* 반응형 */
+
+@media screen and (max-width: 767px) {
+  .header {
+    .title {
+      font-size: 50px;
+    }
+    .down {
+      width: 32px;
+      height: 32px;
+      bottom: 50px;
+    }
+  }
+
+  .content ul li {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+
+  .skills {
+    background: url(../img/cat.png) no-repeat fixed,
+      url(../img/background.png) no-repeat fixed;
+    background-size: 50%, cover;
+    background-position: left bottom, center;
+    height: auto;
+    max-width: 100%;
+
+    li.icon {
+      width: 33%;
+      margin: 10px;
+    }
+  }
+
+  .about_me {
+    .github {
+      right: 10%;
+      bottom: 10%;
+    }
+  }
 }
