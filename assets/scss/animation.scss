@@ -7,7 +7,21 @@
   }
 }
 
+@keyframes circle {
+  form {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
 .down {
   animation: bounce1 500ms ease-in;
   animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.circle {
+  animation: circle 6s linear infinite;
 }

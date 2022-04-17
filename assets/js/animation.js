@@ -6,7 +6,7 @@
   });
 
   const scene = new ScrollMagic.Scene({
-    triggerElement: ".space",
+    triggerElement: ".space1",
     duration: "100%",
     triggerHook: 0.8,
   })
