@@ -43,9 +43,147 @@ p {
   height: 3px;
   width: 0%;
   background-color: #fff;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
+  z-index: 12;
+}
+
+.button_wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: 11;
+  margin: 20px;
+
+  .menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .line {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+  }
+  .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+  .opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+  }
+  .opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+}
+
+nav {
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 1);
+
+  &.opend {
+    width: 100%;
+  }
+  ul {
+    position: relative;
+  }
+  ul li {
+    list-style: none;
+    text-align: center;
+  }
+  ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 3em;
+    padding: 5px 20px;
+    display: inline-flex;
+    font-weight: 700;
+    transition: 0.5s;
+  }
+  ul:hover li a {
+    color: #0002;
+  }
+  ul li:hover a {
+    color: #000;
+    background: rgba(255, 255, 255, 1);
+  }
+  ul li a:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 500px;
+    transition: letter-spacing 0.5s, left 0.5s;
+  }
+  ul li a:hover:before {
+    content: attr(data-text);
+    opacity: 1;
+    left: 50%;
+    letter-spacing: 10px;
+    width: 1800px;
+    height: 1800px;
+  }
+  ul li:nth-child(6n + 1) a:before {
+    background: #81ecec;
+  }
+  ul li:nth-child(6n + 2) a:before {
+    background: #ff7675;
+  }
+  ul li:nth-child(6n + 3) a:before {
+    background: #55efc4;
+  }
+  ul li:nth-child(6n + 4) a:before {
+    background: #a29bfe;
+  }
+  ul li:nth-child(6n + 5) a:before {
+    background: #fd79a8;
+  }
+  ul li:nth-child(6n + 6) a:before {
+    background: #ffeaa7;
+  }
 }
 
 .header {
@@ -95,7 +233,7 @@ p {
 .about_me {
   height: 100vh;
   position: relative;
-
+  padding: 20px;
   .github {
     position: absolute;
     right: 20%;
@@ -198,12 +336,12 @@ p {
 .skills_title {
   opacity: 0;
   font-size: 64px;
+  margin-bottom: 10px;
 }
 
 .icon_wraper {
   display: flex;
   list-style: none;
-  margin-top: 30px;
   flex-wrap: wrap;
   max-width: 1120px;
   margin: 0;
@@ -392,7 +530,7 @@ footer {
   .about_me {
     .github {
       right: 10%;
-      bottom: 10%;
+      bottom: 5%;
     }
   }
 }

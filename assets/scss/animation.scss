@@ -1,4 +1,4 @@
-@keyframes bounce1 {
+@keyframes bounce {
   from {
     transform: translateY(-20px);
   }
@@ -16,8 +16,17 @@
   }
 }
 
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .down {
-  animation: bounce1 500ms ease-in;
+  animation: bounce 500ms ease-in;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
 }

@@ -11,15 +11,11 @@
     triggerHook: 0.8,
   })
     .setTween(tween)
-    .addTo(controller)
-    .addIndicators({
-      name: "1",
-    });
+    .addTo(controller);
 }
 
 {
   const height = document.body.clientHeight;
-  console.log(height);
   const controller = new ScrollMagic.Controller();
 
   const tween = TweenMax.to(".progress", 0.5, {
@@ -38,21 +34,14 @@
     triggerHook: 0,
   })
     .setTween(tween)
-    .addTo(controller)
-    .addIndicators({
-      name: "2",
-    });
-
+    .addTo(controller);
   const scene2 = new ScrollMagic.Scene({
     triggerElement: "body",
     duration: height - window.outerHeight,
     triggerHook: 0,
   })
     .setTween(tween2)
-    .addTo(controller)
-    .addIndicators({
-      name: "2",
-    });
+    .addTo(controller);
 }
 
 {
@@ -69,8 +58,32 @@
   })
     .setTween(tween)
     .addTo(controller)
-    .setPin(".skills_title")
-    .addIndicators({
-      name: "5",
-    });
+    .setPin(".skills_title");
 }
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
+document.querySelector(".button_wrap>.menu").addEventListener("click", (e) => {
+  e.currentTarget.classList.toggle("opened");
+  e.currentTarget.setAttribute(
+    "aria-expanded",
+    e.currentTarget.classList.contains("opened")
+  );
+
+  document.querySelector("nav").classList.toggle("opend");
+});
+
+document.querySelectorAll("nav>ul>li").forEach((v) => {
+  v.addEventListener("click", (e) => {
+    document.querySelector("nav").classList.remove("opend");
+    document.querySelector(".button_wrap>.menu").classList.remove("opened");
+  });
+});
